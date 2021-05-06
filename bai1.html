@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xếp loại điểm trung bình</title>
+    <style> 
+        .container{
+            width: 450px;
+            border: 1px solid white;
+            border-radius: 20px;
+            text-align: center;
+            margin: 30px auto;
+            background-color: aquamarine; 
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Xếp loại học sinh</h1>
+            <label>Xếp loại:</label>
+            <input type="text" id="diem">
+            <input type="button" id="nhap" value="Nhập"><br>
+            <p id="result"></p>
+        </div>
+<script>
+    let nhap = document.getElementById("nhap");
+    nhap.addEventListener("click", ketqua);
+    
+    function ketqua() {
+        let diem = document.getElementById("diem").value;
+        let xeploai;
+        ((diem <=10)? ((diem >=9)? xeploai="Xuất Sắc" : (diem >=8)? xeploai="Giỏi" : (diem >=7)? xeploai="Khá" : (diem>=6)? xeploai="Trung Bình": (diem>0)? xeploai="Yếu": xeploai="Gia tri khong hop le"): xeploai=("Gia tri khong hop le"));
+        document.getElementById("result").innerText = (xeploai);
+    }
+
+</script>
+</body>
+</html>
