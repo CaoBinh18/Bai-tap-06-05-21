@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xếp loại học sinh bằng Switch-Case</title>
+    <style>
+        .container {
+            width: 550px;
+            border: 1px solid white;
+            border-radius: 20px;
+            text-align: center;
+            margin: 30px auto;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Xếp loại học sinh bằng Switch-Case</h1>
+        <label>Xếp loại:</label>
+        <input type="text" id="diem">
+        <input type="button" id="nhap" value="Nhập"><br>
+        <p>Result: <span id="result"></span></p>
+    </div>
+    <script>
+        let nhap = document.getElementById("nhap");
+        nhap.addEventListener("click", ketqua);
+        function ketqua() {
+            let diem = document.getElementById("diem").value;
+            let result;
+            switch (diem) {
+                case "0":
+                case "1":
+                case "2":
+                case "3":
+                case "4":
+                case "5":
+                    result = "Yếu"; break;
+                case "6":
+                    result = "Trung Bình"; break;
+                case "7":
+                    result = "Khá"; break;
+                case "8":
+                    result = "Giỏi"; break;
+                case "9":
+                case "10":
+                    result = "Suất Xắc"; break;
+            }
+            document.getElementById("result").innerText = (result);
+        }
+    </script>
+</body>
+
+</html>
